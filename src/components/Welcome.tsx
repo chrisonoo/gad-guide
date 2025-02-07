@@ -5,7 +5,7 @@ import { GadLogoBgNone } from "@/components/icons/GadLogoBgNone";
 export default function Welcome() {
   return (
     <div className="h-dvh flex flex-col items-center justify-center gap-12 p-8">
-      <LightDarkToggle className="absolute top-6 right-6" />
+      <LightDarkToggle className="absolute top-4 right-4" />
       <div className="flex flex-col gap-4 items-center justify-center">
         <div className="flex items-center gap-4">
           <GadLogoBgNone className="fill-accent pb-1 flex-shrink-0 h-[70px] md:h-[95px]" />
@@ -17,8 +17,9 @@ export default function Welcome() {
             Developer
           </div>
         </div>
-        <p className="text-center text-sm md:text-base text-gray-400">
-          You don't just code. You&nbsp;evolve!&nbsp;You&nbsp;transcend!
+        <p className="text-center text-sm md:text-base text-gray-600 dark:text-gray-400">
+          You&nbsp;evolve! You&nbsp;are&nbsp;Superintelligence!
+          You&nbsp;transcend!
         </p>
       </div>
       <Button asChild size="responsive">
