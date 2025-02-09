@@ -6,7 +6,7 @@ type Props = {
   className?: string;
 };
 
-export function LightDarkToggle({ className }: Props) {
+export function ThemeToggle({ className }: Props) {
   const localStorageTheme =
     localStorage.theme !== undefined ? localStorage.theme : false;
   const isSystemThemeDark = window.matchMedia(
