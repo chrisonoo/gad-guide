@@ -3,6 +3,7 @@
   const isSystemThemeDark = window.matchMedia(
     "(prefers-color-scheme: dark)"
   ).matches;
+  console.log(isSystemThemeDark);
 
   if (localStorageTheme === "dark") {
     localStorage.theme = "dark";
