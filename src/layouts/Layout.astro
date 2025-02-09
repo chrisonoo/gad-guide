@@ -1,22 +1,21 @@
 ---
-import { Header } from "@/components/header/Header";
+import Header from "@/components/header/Header.astro";
 import ThemeInit from "@/components/header/ThemeInit.astro";
 import "../styles/global.css";
-import { ThemeToggle } from "@/components/header/ThemeToggle";
 ---
 
 <!doctype html>
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>GAD - GPT Augmented Developer</title>
-    <ThemeInit />
-  </head>
-  <body>
-    <Header client:only />
-    <slot />
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>GAD - GPT Augmented Developer</title>
+        <ThemeInit />
+    </head>
+    <body>
+        <Header />
+        <slot />
+    </body>
 </html>

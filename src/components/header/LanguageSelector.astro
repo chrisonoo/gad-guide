@@ -1,0 +1,69 @@
+---
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
+
+const languages = [
+    { code: "en", name: "English" },
+    { code: "no", name: "Norsk" },
+    { code: "pl", name: "Polski" },
+];
+
+// Get current language from URL
+const currentPath = Astro.url.pathname;
+const match = currentPath.match(/\/([a-z]{2})(?:\/|$)/);
+const currentLang = match ? match[1] : "en";
+---
+
+<Select value={currentLang} client:load>
+    <SelectTrigger className="w-[65px]">
+        <SelectValue defaultValue={currentLang}>
+            {currentLang.toUpperCase()}
+        </SelectValue>
+    </SelectTrigger>
+    <SelectContent>
+        {
+            languages.map((lang) => (
+                <SelectItem key={lang.code} value={lang.code}>
+                    {lang.name}
+                </SelectItem>
+            ))
+        }
+    </SelectContent>
+</Select>
+
+<script is:inline>
+    const handleValueChange = (newLang) => {
+        const currentPath = window.location.pathname;
+        const match = currentPath.match(/\/([a-z]{2})(?:\/|$)/);
+        const currentLang = match ? match[1] : "en";
+
+        const newPath = currentPath.replace(`/${currentLang}`, `/${newLang}`);
+        window.location.href = newPath;
+    };
+
+    // Add event listener for select change
+    document.addEventListener("astro:page-load", () => {
+        const select = document.querySelector("select");
+        if (select) {
+            select.addEventListener("change", (e) => {
+                const target = e.target;
+                handleValueChange(target.value);
+            });
+        }
+    });
+</script>
+
+<style>
+    select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.5rem center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+    }
+</style>

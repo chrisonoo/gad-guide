@@ -1,19 +1,17 @@
 <script is:inline>
-  const localStorageTheme = localStorage.theme ?? "dark";
-  const isSystemThemeDark = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
-  console.log(isSystemThemeDark);
+    const localStorageTheme = localStorage.theme ?? "dark";
+    const isSystemThemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    ).matches;
 
-  if (localStorageTheme === "dark") {
-    localStorage.theme = "dark";
-  } else if (localStorageTheme === "") {
-    document.documentElement.classList.toggle("dark", isSystemThemeDark);
-    console.log("System theme is dark:", isSystemThemeDark);
-  } else {
-    document.documentElement.classList.toggle(
-      "dark",
-      localStorageTheme === "dark"
-    );
-  }
+    if (localStorageTheme === "dark") {
+        localStorage.theme = "dark";
+    } else if (localStorageTheme === "") {
+        document.documentElement.classList.toggle("dark", isSystemThemeDark);
+    } else {
+        document.documentElement.classList.toggle(
+            "dark",
+            localStorageTheme === "dark"
+        );
+    }
 </script>

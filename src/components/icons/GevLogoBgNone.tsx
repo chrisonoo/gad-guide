@@ -5,7 +5,7 @@ interface SvgProps extends React.SVGProps<SVGSVGElement> {
   height?: string | number;
 }
 
-export const GadLogoBgNone: React.FC<SvgProps> = ({
+export const GevLogoBgNone: React.FC<SvgProps> = ({
   height = 32,
   width,
   className,
