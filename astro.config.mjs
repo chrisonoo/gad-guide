@@ -9,7 +9,18 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
+  i18n: {
+    locales: ["en", "no", "pl"],
+    defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: true,
+      fallbackType: "rewrite",
+    },
+    fallback: {
+      no: "en",
+      pl: "en",
+    },
+  },
   integrations: [react(), mdx()],
   output: "static",
 });
