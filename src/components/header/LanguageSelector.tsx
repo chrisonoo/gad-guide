@@ -42,7 +42,7 @@ export function LanguageSelector() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-[40px] h-8 rounded-md border border-input bg-transparent px-2 py-1 text-sm shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground flex items-center justify-center"
+        className="w-10 h-9 rounded-md border border-input bg-transparent px-2 py-1 text-sm shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground flex items-center justify-center"
       >
         {currentLang.toUpperCase()}
       </button>

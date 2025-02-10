@@ -1,11 +1,9 @@
 ---
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSelector } from "./LanguageSelector";
-// import LanguageSelector from "./LanguageSelector.astro";
 ---
 
 <div class="absolute top-4 right-4 flex items-center gap-4">
     <ThemeToggle client:only="react" />
     <LanguageSelector client:only="react" />
-    <!-- <LanguageSelector /> -->
 </div>
