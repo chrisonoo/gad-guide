@@ -1,6 +1,6 @@
 ---
-import Header from "@/components/header/Header.astro";
-import ThemeInit from "@/components/header/ThemeInit.astro";
+import Header from "@/components/header-old/Header";
+import ThemeInit from "@/components/header-old/ThemeInit.astro";
 import "../styles/global.css";
 ---
 
@@ -15,7 +15,7 @@ import "../styles/global.css";
         <ThemeInit />
     </head>
     <body>
-        <Header />
+        <Header client:only="react" />
         <slot />
     </body>
 </html>
